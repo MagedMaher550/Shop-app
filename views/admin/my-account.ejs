@@ -1,0 +1,82 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <h1>
+                    Account Information:-
+                </h1>
+                <table>
+                    <tr>
+                        <td>
+                            User Email:    
+                        </td>
+                        <td>
+                            <b> <%= userEmail %> </b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Products Added:    
+                        </td>
+                        <td>
+                            <b> <%= numberOfProductsAdded %> </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Items in Cart:
+                        </td>
+                        <td>
+                            <b> <%= numbersOfItemsInCart %> </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cart Total Price:
+                        </td>
+                        <td>
+                            <b> <%= cartTotalPrice %> $</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Number of Orders:
+                        </td>
+                        <td>
+                            <b> <%= numberOfOrders %> </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Orders Total Price:
+                        </td>
+                        <td>
+                            <b> <%= OrdersTotalPrice %> $</b>
+                        </td>
+                    </tr>
+                </table>
+                <br><br><br>
+                <h2>Account Deletion</h2>
+                <form action="/admin/delete-account" method="POST">
+                    <h3>
+                        Are you sure that you want to delete your account?
+                    </h3>
+                    <input type="radio" id="Yes" name="check" value="Yes">
+                    <label for="Yes">Yes</label><br>
+        
+                    <input type="radio" id="No" name="check" value="No">
+                    <label for="No">No</label><br>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <br>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <p>
+                    <b> Please note that by deleting your account, all your products will be deleted as well. </b>
+                </p>                 
+            </main>
+            <%- include('../includes/end.ejs') %>

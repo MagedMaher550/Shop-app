@@ -1,0 +1,5 @@
+<% if (isAuthenticated) { %>
+    <button class="btn" type="button" onclick="addToCart(this)">Add to Cart</button>
+    <input type="hidden" name="productId" value="<%= product._id %>">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+<% } %> 

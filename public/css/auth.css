@@ -1,0 +1,23 @@
+.login-form {
+  width: 20rem;
+  max-width: 90%;
+  margin: auto;
+  display: block;
+}
+.signUpSuggest {
+  display: inline-block;
+  font-size: 14px;
+  padding-left: 7px;
+}
+.signUpSuggestButton {
+  color: rgb(155, 155, 44);
+}
+
+.passReset {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.passReset:hover {
+  color: rgb(128, 128, 42);
+}
